@@ -1,4 +1,4 @@
-#computer guess the number game
+#rng (random number generator)
     #need to add a count feature after every X amount of guesses
     #add feature number reveal on guess_count = random.randint()
     #add a user database and leaderboard of high scores
@@ -6,7 +6,6 @@
 
 
 
-#rng (random number generator)
 import random
 
 start = "What is your name?"
@@ -35,10 +34,11 @@ while True:
             break
         # added hints
         if latest_guess > mystery_number:
-            print("Sorry, your're too high.")
+            print(f"Sorry, {name} your're too high.")
 
         else:
-            print("Sorry, you're too low.")
+            print(f"Sorry, {name} you're too low.")
+    
     # moved the loop_game prompt to its own loop for effeciency
     print(loop_game)
     cont_loop = input().lower()[:2]
@@ -47,4 +47,3 @@ while True:
         break
     else:
         continue
-
