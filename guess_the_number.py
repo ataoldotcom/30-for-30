@@ -10,7 +10,7 @@
 import random
 
 start = "What is your name?"
-loop_game = "..would you like to go again: \'Yes\' or \'No\'?"
+loop_game = "..would you like to go again: \"Yes\" or \"No\"?"
 print(start)
 name = input()
 
