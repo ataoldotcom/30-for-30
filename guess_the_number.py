@@ -9,7 +9,7 @@
 import random
 
 start = "What is your name?"
-loop_game = "..would you like to go again: \"Yes\" or \"No\"?"
+loop_game = "would you like to go again: \"Yes\" or \"No\"?"
 print(start)
 name = input()
 
@@ -30,7 +30,7 @@ while True:
             continue
         if latest_guess == mystery_number:
             print("Winner! Winner! chicken dinner!\nYou can end on a winning streak.")
-            print("unless..", end="")
+            print("Unless", end="...")
             break
         # added hints
         if latest_guess > mystery_number:
@@ -41,7 +41,7 @@ while True:
     
     # moved the loop_game prompt to its own loop for effeciency
     print(loop_game)
-    cont_loop = input().lower()[:2]
+    cont_loop = input().lower().strip()[:2]
     if cont_loop == "no":
         print("No problemo. Thanks for playing.")
         break
