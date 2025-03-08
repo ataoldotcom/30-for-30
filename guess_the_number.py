@@ -1,7 +1,7 @@
 #rng (random number generator)
     #need to add a count feature after every X amount of guesses
     #add feature number reveal on guess_count = random.randint()
-    #add a user database and leaderboard of high scores
+    #add a user storage and leaderboard of high scores
     #add a time element
 
 
