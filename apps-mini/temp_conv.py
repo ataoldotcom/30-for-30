@@ -20,9 +20,9 @@ temp_k = ()
 while True:    
     try:
         temp_us = round(float(input("What is the temperature in farenheit: \n")),2)
-        print("Degrees Fahreneheit: ")
-        print("Degrees Celsius: ")
-        print("Degrees Kelvin: ")
+        print("Degrees Fahreneheit: \n")
+        print("Degrees Celsius: \n")
+        print("Degrees Kelvin: \n")
         break
 
     except ValueError:
