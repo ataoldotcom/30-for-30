@@ -1,4 +1,6 @@
 ##Multiplication/Exponent Table app
+##need to change the code so that its storing results in a list. 
+## fix the print station in the function if itend to RETURN results
 
 print("Welcome to the Multiplication/Exponent Table App")
 
