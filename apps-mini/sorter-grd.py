@@ -18,9 +18,9 @@ while True:
         continue
 
 user_grades = [grade_1, grade_2, grade_3, grade_4, grade_5]
-#need to add sorting to original list. although not the best practice. 
+ 
 user_grades.sort(reverse=True)
-#type error. can not sort integers. 
+ 
 high = sorted(user_grades, reverse=True)[0]
 
 
