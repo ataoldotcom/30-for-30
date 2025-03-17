@@ -18,7 +18,8 @@ while True:
             print(f"{i}. {item.title()}")
         break       
     else:   
-        print(f"You currently have: ({' and '.join([item.title() for item in list_grc])}) in your list.\n")
+        formatted_list = ' and '.join([item.title() for item in list_grc])
+        print(f"You currently have: ({formatted_list}) in your list.")
         break
 
-input("\nWould you like to add to this list?:\t").strip()
+input("Would you like to add to this list?:\t").strip()
