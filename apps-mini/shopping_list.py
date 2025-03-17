@@ -1,24 +1,24 @@
-## Grocerly list app
+## Grocery list app
 ## feature list:
-## print list out as numbered line items when > 5 items
+##done -  print list out as numbered line items when > 5 items
 
 
 print("\n\n****\tWelcome To The Shopping List App\t****\n")
 print("Current Date and Time: ")
 
-list_grc = ["milk","oatmeal","salad","deoderant", "socks", "potatoes"]
+list_grc = ["milk","oatmeal","salad","deoderant", "socks"]
 
 while True: 
     if not list_grc:
         print("Your grocery list is currently empty. Lets get started!\n") 
         break
     elif len(list_grc) > 5 :
-       #print("checking loop seq is working")
-       #need print numbered list
-        for i in range(len(list_grc)):
-            print('i. '.join([item.title() for item in list_grc]))
-            break       
+        print("Grocery List:")
+        for i,item in enumerate(list_grc, start=1):
+            print(f"{i}. {item.title()}")
+        break       
     else:   
         print(f"You currently have: ({' and '.join([item.title() for item in list_grc])}) in your list.\n")
         break
 
+input("\nWould you like to add to this list?:\t").strip()
