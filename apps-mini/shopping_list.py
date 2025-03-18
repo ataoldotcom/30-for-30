@@ -23,7 +23,7 @@ while True:
     elif len(list_grc) > 5 :
         print("Grocery List:")
         for i,item in enumerate(list_grc, start=1):
-            print(f"{i}. {item.title()}")
+            print(f"{i}. {str(item.title())}")
         break       
     #if list has < 5 items prints as "item + and + item"
     else:   
