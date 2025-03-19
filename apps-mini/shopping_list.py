@@ -6,6 +6,8 @@
 ## done -  print list out as numbered line items when > 5 items
 ## done - turn loop ( list formmatting) into function
 ## done - turn loop (add user inputs into item) into function 
+## user input to remove items from the list. 
+## update function to create a list of numbers and run .pop with each line. 
 
 
 print("\n\n****\tWelcome To The Shopping List App\t****\n")
@@ -48,4 +50,14 @@ def add_items(grocery_list):
 
 format_list(list_grc)
 add_items(list_grc)
+
+'''
+try:
+    to_remove = int(input("Enter the number of the item(s) you wish to remove: "))
+    xit = (input - 1)
+    removed_item = list_grc.pop(xit)
+except ValueError:
+    print("Please enter a number. If multiple inputs, comma seperate them eg:(3, 6, 9, ..) ")
+'''
+
 print("\n****\t\t\t\t\t\t****\n")
