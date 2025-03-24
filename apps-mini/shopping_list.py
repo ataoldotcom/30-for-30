@@ -6,8 +6,8 @@
 ## done -  print list out as numbered line items when > 5 items
 ## done - turn loop ( list formmatting) into function
 ## done - turn loop (add user inputs into item) into function 
-## user input to remove items from the list. 
-## update function to create a list of numbers and run .pop with each line. 
+## WIP - user input to remove items from the list. 
+## WIP - update function to create a list of numbers and run .pop with each line. 
 
 
 print("\n\n****\tWelcome To The Shopping List App\t****\n")
