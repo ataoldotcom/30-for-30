@@ -35,8 +35,8 @@ def format_list_loop(grocery_list):
 def add_items(grocery_list):
 #loop to add user inputs as items. 
     while True:
-        ans_add = input("\nWould you like to add more items to this list? ('Yes' or 'No'):\t\n").strip()
-        if ans_add[:2] == "no":
+        ans_add = input("\nWould you like to add more items to this list? ('Yes' or 'No'):\t\n").strip().title()
+        if ans_add[:2] == "No":
             print("\n", end="")
             format_list_loop(grocery_list)
             #print("****\t\t\t\t\t\t****")
@@ -60,19 +60,27 @@ while True:
     try:
         # ask user if they need to remove any items. 
         if_remove = input("Would you like to remove any items from your list? Enter 'Yes' or 'No'").title()
-        if if_remove == "yes":
+        if if_remove == "Yes":
             print("Below is your Shopping List")
             numbered_list(grocery_list)
             #exception handling to catch non numeric values. 
             try:
-                #could turn the input of numbers into a list iteself. 
-                to_remove = int(input("Enter the number of the item you wish to remove: "))
-                xit = (to_remove - 1)
-                removed_item = list_grc.pop(xit)
+                to_remove = input("Enter the number of the item you wish to remove. If multiple inputs, comma seperate them eg; (3, 6, 9, ..):  ")
+                items_to_remove = to_remove.split(",")
+
+                #using below print to validate list manipulation. 
+                print(items_to_remove)
+                
+                stripped_items = '\n'.join([item.strip() for item in items_to_remove])
+                #using below to validate list manipulation
+                print(stripped_items)
+                
+                stripped_item_numb = ( #addVAR - 1)
+                removed_item = list_grc.pop(stripped_item_numb)
             except ValueError:
                 print("Please enter a valid number.")
             except IndexError:
-                print("Please enter a number of an item in the list. If multiple inputs, comma seperate them eg:(3, 6, 9, ..) "
+                print("Please enter a number of an item in the list."
 
     except :
         print("Please type \"Yes\" or \"No\"")
