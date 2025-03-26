@@ -8,9 +8,11 @@
 ## done - turn loop (add user inputs into item) into function 
 ## done - user input to remove items from the list. 
 ## done - update function to create a list of numbers and run .pop with each line. 
-##  - corrected list iterations sorting changing
+##  + corrected list iterations sorting changing
 ## done - changed list to set so duplicate numbers won't destroy list
+## - break removal function up smaller functions that are called by 1 function
 
+import datetime
 
 print("\n\n****\tWelcome To The Shopping List App\t****\n")
 print("Current Date and Time: ")
