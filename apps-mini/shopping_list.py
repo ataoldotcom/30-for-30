@@ -52,11 +52,11 @@ def numbered_list(grocery_list):
     for i, item in enumerate(grocery_list, start= 1):
         print(f"{i}. {str(item.title())}")
 
-format_list_loop(list_grc)
-add_items(list_grc)
+#format_list_loop(list_grc)
+#add_items(list_grc)
 
-'''
-while True: 
+
+def remove_items(grocery_list):
     try:
         # ask user if they need to remove any items. 
         if_remove = input("Would you like to remove any items from your list? Enter 'Yes' or 'No'").title()
@@ -64,8 +64,8 @@ while True:
             print("Below is your Shopping List")
             numbered_list(grocery_list)
             #exception handling to catch non numeric values. 
+            to_remove = input("Enter the number of the item you wish to remove. If multiple inputs, comma seperate them eg; (3, 6, 9, ..):  ")
             try:
-                to_remove = input("Enter the number of the item you wish to remove. If multiple inputs, comma seperate them eg; (3, 6, 9, ..):  ")
                 items_to_remove = to_remove.split(",")
 
                 #using below print to validate list manipulation. 
@@ -75,16 +75,22 @@ while True:
                 #using below to validate list manipulation
                 print(stripped_items)
                 
-                stripped_item_numb = ( #addVAR - 1)
+                stripped_item_numb = (  - 1)
                 removed_item = list_grc.pop(stripped_item_numb)
             except ValueError:
                 print("Please enter a valid number.")
+                continue
             except IndexError:
                 print("Please enter a number of an item in the list."
-
-    except :
-        print("Please type \"Yes\" or \"No\"")
-
-'''
+                continue
+        elif if_remove == "No":
+            print("Happy Shopping!")
+            break
+        else:
+            print("Please type \"Yes\" or \"No\"")
+            continue
+    except ValueError:
+        continue
+        
 
 print("\n****\t\t\t\t\t\t****\n")
