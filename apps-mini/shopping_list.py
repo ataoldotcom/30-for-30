@@ -6,8 +6,10 @@
 ## done -  print list out as numbered line items when > 5 items
 ## done - turn loop ( list formmatting) into function
 ## done - turn loop (add user inputs into item) into function 
-## WIP - user input to remove items from the list. 
-## WIP - update function to create a list of numbers and run .pop with each line. 
+## done - user input to remove items from the list. 
+## done - update function to create a list of numbers and run .pop with each line. 
+##  - corrected list iterations sorting changing
+## done - changed list to set so duplicate numbers won't destroy list
 
 
 print("\n\n****\tWelcome To The Shopping List App\t****\n")
@@ -52,45 +54,46 @@ def numbered_list(grocery_list):
     for i, item in enumerate(grocery_list, start= 1):
         print(f"{i}. {str(item.title())}")
 
-#format_list_loop(list_grc)
-#add_items(list_grc)
-
-
-def remove_items(grocery_list):
-    try:
+def remove_items_loop(grocery_list):
+    while True:
         # ask user if they need to remove any items. 
-        if_remove = input("Would you like to remove any items from your list? Enter 'Yes' or 'No'").title()
+        if_remove = input("\nWould you like to remove any items from your list? Enter 'Yes' or 'No': \n").title().strip()
         if if_remove == "Yes":
-            print("Below is your Shopping List")
+            print("\n\nBelow is your Shopping List:")
             numbered_list(grocery_list)
             #exception handling to catch non numeric values. 
-            to_remove = input("Enter the number of the item you wish to remove. If multiple inputs, comma seperate them eg; (3, 6, 9, ..):  ")
+            to_remove = input("\nEnter the number of the item(s) you wish to remove, comma seperated (eg: 3, 6, 9, ..):\n").strip()
             try:
-                items_to_remove = to_remove.split(",")
+                str_to_remove = to_remove.split(",")
+                numbs_to_remove = set([int(numb) for numb in str_to_remove])
+                sort_numbs_to_remove = sorted(numbs_to_remove, reverse=True)
 
                 #using below print to validate list manipulation. 
-                print(items_to_remove)
+                #print(sort_numbs_to_remove)
                 
-                stripped_items = '\n'.join([item.strip() for item in items_to_remove])
-                #using below to validate list manipulation
-                print(stripped_items)
-                
-                stripped_item_numb = (  - 1)
-                removed_item = list_grc.pop(stripped_item_numb)
+                for item in sort_numbs_to_remove:
+                    index_item_numb = (item - 1)
+                    removed_item = list_grc.pop(index_item_numb)
+                    print(f"\n\t*Removed from Shopping List: {removed_item.title()}.")
             except ValueError:
                 print("Please enter a valid number.")
                 continue
-            except IndexError:
-                print("Please enter a number of an item in the list."
+            except IndexError as ie :
+                print(f"\n**Error**\tPlease enter a number corresponding to an item in the list.")
                 continue
         elif if_remove == "No":
-            print("Happy Shopping!")
+            print("\t\tHappy Shopping!")
+            numbered_list(grocery_list)
             break
         else:
             print("Please type \"Yes\" or \"No\"")
             continue
-    except ValueError:
-        continue
-        
+
+format_list_loop(list_grc)
+add_items(list_grc)
+
+remove_items_loop(list_grc)
+
+
 
 print("\n****\t\t\t\t\t\t****\n")
